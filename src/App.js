@@ -15,7 +15,7 @@ import Navbar from "./components/Navbar.js";
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="container">
       <Router>
         <Navbar />
         <Route path="/" exact component={CompanyPage} />

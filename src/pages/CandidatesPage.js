@@ -1,14 +1,31 @@
 import React, { Component } from "react";
 
-import { Link } from "react-router-dom";
 import {
-  ListGroup,
-  ListGroupItem,
-  Container,
   Row,
   Col,
-  Card
+  Card,
+  ListGroup,
+  Container,
+  ListGroupItem
 } from "react-bootstrap";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMap,
+  faEdit,
+  faTrash,
+  faUserMd,
+  faMapPin,
+  faEnvelope,
+  faVenusMars,
+  faBriefcase
+} from "@fortawesome/free-solid-svg-icons";
+
+const getImageUrl = candidate => {
+  const gender = candidate.gender === "Male" ? "men" : "women";
+  const num = (Math.random() * 75).toFixed();
+  return `https://randomuser.me/api/portraits/${gender}/${num}.jpg`;
+};
 
 export default class CandidatesPage extends Component {
   state = {
@@ -38,33 +55,47 @@ export default class CandidatesPage extends Component {
       <Container fluid style={{ paddingTop: 100 }}>
         <Row>
           {this.state.candidates.map(candidate => {
-            console.log("candidate", candidate);
             return (
-              <Col lg="2">
+              <Col lg="3" key={candidate.id}>
                 <Card>
+                  {/* <Card.Img variant="top" src={getImageUrl(candidate)} /> */}
                   <Card.Img variant="top" src={candidate.profile_pic_url} />
                   <Card.Body>
-                    <Card.Title>{candidate.first_name + ' ' + candidate.last_name}</Card.Title>
-                    <Card.Text>
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </Card.Text>
+                    <Card.Title>
+                      {candidate.first_name + " " + candidate.last_name}
+                    </Card.Title>
+                    <Card.Text>{candidate.id}</Card.Text>
                   </Card.Body>
                   <ListGroup className="list-group-flush">
-                    <ListGroupItem>{candidate.company}</ListGroupItem>
-                    <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-                    <ListGroupItem>{candidate.id}</ListGroupItem>
+                    <ListGroupItem>
+                      <FontAwesomeIcon icon={faBriefcase} /> {candidate.company}
+                    </ListGroupItem>
+                    <ListGroupItem>
+                      <FontAwesomeIcon icon={faUserMd} /> {candidate.job_title}
+                    </ListGroupItem>
+                    <ListGroupItem>
+                      <FontAwesomeIcon icon={faVenusMars} /> {candidate.gender}
+                    </ListGroupItem>
+                    <ListGroupItem>
+                      <FontAwesomeIcon icon={faMapPin} />{" "}
+                      {candidate.locations && candidate.locations[0].city}
+                    </ListGroupItem>
+                    <ListGroupItem>
+                      <FontAwesomeIcon icon={faMap} />{" "}
+                      {candidate.locations && candidate.country}
+                    </ListGroupItem>
+                    <ListGroupItem>
+                      <FontAwesomeIcon icon={faEnvelope} /> {candidate.email}
+                    </ListGroupItem>
                   </ListGroup>
                   <Card.Body>
-                    <Card.Link href="#">
-                      <button
-                        onClick={() => this.onDeleteCandidate(candidate.id)}
-                      >
-                        Delete Candidate
-                      </button>
+                    <Card.Link
+                      onClick={() => this.onDeleteCandidate(candidate.id)}
+                    >
+                      <FontAwesomeIcon icon={faTrash} /> Remove
                     </Card.Link>
-                    <Card.Link href="#">
-                      <Link to={`/candidates/${candidate.id}/edit`}>Edit</Link>
+                    <Card.Link href={`/candidates/${candidate.id}/edit`}>
+                      <FontAwesomeIcon icon={faEdit} /> Edit
                     </Card.Link>
                   </Card.Body>
                 </Card>

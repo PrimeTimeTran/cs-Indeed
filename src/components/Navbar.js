@@ -1,6 +1,5 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
 
 import { Nav, Form, Button, Navbar, FormControl } from "react-bootstrap";
 
@@ -12,13 +11,16 @@ export default function Navbarr() {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="/company">
-            <Link to="/company">Company</Link>
+            Company
           </Nav.Link>
           <Nav.Link href="/dashboard">
-            <Link to="/dashboard">Dashboard</Link>
+            Dashboard
           </Nav.Link>
           <Nav.Link href="/candidates">
-            <Link to="/candidates">Candidates</Link>
+            Candidates
+          </Nav.Link>
+          <Nav.Link href="/candidates/new">
+            New Candidate
           </Nav.Link>
         </Nav>
         <Form inline>
