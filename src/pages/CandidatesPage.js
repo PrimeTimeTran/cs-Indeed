@@ -39,7 +39,10 @@ export default function CandidatesPage(props) {
         setCandidates(data);
         setLoading(false);
       } catch (error) {
-        setCandidates(require('../candidates.json'));
+        const bgCandidates = require('../candidates.json')
+        console.log('bgCandidates', bgCandidates.candidates)
+        setCandidates(bgCandidates.candidates);
+        setLoading(false);
         console.log("Oops");
       }
     };
