@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 import { InputGroup, Row, Col, Form, Button, Container } from "react-bootstrap";
 
@@ -57,6 +58,9 @@ export default function EditCandidatePage(props) {
   console.log("candidate", candidate);
   return (
     <Container style={{ paddingTop: 100 }}>
+      <Helmet>
+          <title>Editing: {`${candidate.first_name} ${candidate.last_name}`}</title>
+        </Helmet>
       <Row>
         <Col>
           <img src={candidate.profile_pic_url} />

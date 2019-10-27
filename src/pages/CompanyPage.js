@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import { Helmet } from "react-helmet";
 
+import { placeCopyright } from '../utils'
+
 export default class CompanyPage extends Component {
   render() {
     return (
@@ -87,6 +89,142 @@ export default class CompanyPage extends Component {
             <div className="bg-white box-shadow mx-auto"></div>
           </div>
         </div>
+        <section className="jumbotron text-center" style={{ height: "50vh" }}>
+        <div className="container">
+          <h1 className="jumbotron-heading">Album example</h1>
+          <p className="lead text-muted">
+            Something short and leading about the collection below—its contents,
+            the creator, etc. Make it short and sweet, but not too short so
+            folks don't simply skip over it entirely.
+          </p>
+          <p>
+            <a href="#" className="btn btn-primary my-2">
+              Main call to action
+            </a>
+            <a href="#" className="btn btn-secondary my-2">
+              Secondary action
+            </a>
+          </p>
+        </div>
+      </section>
+      <div className="container">
+        <h1 className="font-weight-light text-center text-lg-left mt-4 mb-0">
+          Thumbnail Gallery
+        </h1>
+
+        <hr className="mt-2 mb-5" />
+
+        <div className="row text-center text-lg-left">
+          <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+              <img
+                className="img-fluid img-thumbnail"
+                src="https://source.unsplash.com/pWkk7iiCoDM/400x300"
+                alt=""
+              />
+            </a>
+          </div>
+          <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+              <img
+                className="img-fluid img-thumbnail"
+                src="https://source.unsplash.com/aob0ukAYfuI/400x300"
+                alt=""
+              />
+            </a>
+          </div>
+          <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+              <img
+                className="img-fluid img-thumbnail"
+                src="https://source.unsplash.com/EUfxH-pze7s/400x300"
+                alt=""
+              />
+            </a>
+          </div>
+          <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+              <img
+                className="img-fluid img-thumbnail"
+                src="https://source.unsplash.com/M185_qYH8vg/400x300"
+                alt=""
+              />
+            </a>
+          </div>
+          <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+              <img
+                className="img-fluid img-thumbnail"
+                src="https://source.unsplash.com/sesveuG_rNo/400x300"
+                alt=""
+              />
+            </a>
+          </div>
+          <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+              <img
+                className="img-fluid img-thumbnail"
+                src="https://source.unsplash.com/AvhMzHwiE_0/400x300"
+                alt=""
+              />
+            </a>
+          </div>
+          <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+              <img
+                className="img-fluid img-thumbnail"
+                src="https://source.unsplash.com/2gYsZUmockw/400x300"
+                alt=""
+              />
+            </a>
+          </div>
+          <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+              <img
+                className="img-fluid img-thumbnail"
+                src="https://source.unsplash.com/EMSDtjVHdQ8/400x300"
+                alt=""
+              />
+            </a>
+          </div>
+          <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+              <img
+                className="img-fluid img-thumbnail"
+                src="https://source.unsplash.com/8mUEy0ABdNE/400x300"
+                alt=""
+              />
+            </a>
+          </div>
+          <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+              <img
+                className="img-fluid img-thumbnail"
+                src="https://source.unsplash.com/G9Rfc1qccH4/400x300"
+                alt=""
+              />
+            </a>
+          </div>
+          <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+              <img
+                className="img-fluid img-thumbnail"
+                src="https://source.unsplash.com/aJeH0KcFkuc/400x300"
+                alt=""
+              />
+            </a>
+          </div>
+          <div className="col-lg-3 col-md-4 col-6">
+            <a href="#" className="d-block mb-4 h-100">
+              <img
+                className="img-fluid img-thumbnail"
+                src="https://source.unsplash.com/p2TQ-3Bh3Oo/400x300"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+      </div>
         <footer className="container py-5">
           <div className="row">
             <div className="col-12 col-md">
@@ -110,7 +248,7 @@ export default class CompanyPage extends Component {
                 <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
                 <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
               </svg>
-              <small className="d-block mb-3 text-muted">© 2016-2019</small>
+              <small className="d-block mb-3 text-muted">{placeCopyright()}</small>
             </div>
             <div className="col-6 col-md">
               <h5>Features</h5>
@@ -151,13 +289,13 @@ export default class CompanyPage extends Component {
               <h5>Resources</h5>
               <ul className="list-unstyled text-small">
                 <li>
-                  <a className="text-muted" href="#">
-                    Resource
+                  <a className="text-muted" href="/portfolio">
+                    Portfolio
                   </a>
                 </li>
                 <li>
-                  <a className="text-muted" href="#">
-                    Resource name
+                  <a className="text-muted" href="/dashboard">
+                    Dashboard
                   </a>
                 </li>
                 <li>
@@ -201,7 +339,7 @@ export default class CompanyPage extends Component {
               <h5>About</h5>
               <ul className="list-unstyled text-small">
                 <li>
-                  <a className="text-muted" href="#">
+                  <a className="text-muted" href="/team">
                     Team
                   </a>
                 </li>
