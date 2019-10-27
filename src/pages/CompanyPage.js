@@ -254,8 +254,8 @@ export default class CompanyPage extends Component {
               <h5>Features</h5>
               <ul className="list-unstyled text-small">
                 <li>
-                  <a className="text-muted" href="#">
-                    Cool stuff
+                  <a className="text-muted" href="/login">
+                    Login
                   </a>
                 </li>
                 <li>
