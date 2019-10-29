@@ -83,7 +83,6 @@ export default function CandidatesPage(props) {
           return (
             <Col lg="3" key={candidate.id}>
               <Card>
-                {/* <Card.Img variant="top" src={getImageUrl(candidate)} /> */}
                 <Card.Img variant="top" src={candidate.profile_pic_url} />
                 <Card.Body>
                   <Card.Title>

@@ -1,7 +1,8 @@
 import React from "react";
 
-
 import { Nav, Form, Button, Navbar, FormControl } from "react-bootstrap";
+
+import { Link } from "react-router-dom";
 
 export default function Navbarr() {
   return (
@@ -10,18 +11,18 @@ export default function Navbarr() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="/company">
-            Company
-          </Nav.Link>
-          <Nav.Link href="/dashboard">
+          <Link to="/company" className="nav-link">
+            Home
+          </Link>
+          <Link to="/dashboard" className="nav-link">
             Dashboard
-          </Nav.Link>
-          <Nav.Link href="/candidates">
+          </Link>
+          <Link to="/candidates" className="nav-link">
             Candidates
-          </Nav.Link>
-          <Nav.Link href="/candidates/new">
+          </Link>
+          <Link to="/candidates/new" className="nav-link">
             New Candidate
-          </Nav.Link>
+          </Link>
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />

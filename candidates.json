@@ -1,47 +1,6 @@
 {
   "candidates": [
     {
-      "id": 103,
-      "first_name": "wqdwqwqd",
-      "last_name": "Casely",
-      "email": "ncasely2u@patch.com",
-      "gender": "Male",
-      "country": "Portugal",
-      "job_title": "Sales Representative",
-      "company": "Mydeo",
-      "locations": [
-        {
-          "city": "Skogås"
-        },
-        {
-          "city": "Mandalgovi"
-        },
-        {
-          "city": "Tanabi"
-        }
-      ],
-      "profile_pic_url": "https://robohash.org/autemdelenitiipsum.bmp?size=50x50&set=set1"
-    },
-    {
-      "id": 104,
-      "first_name": "Elijah",
-      "last_name": "Loram",
-      "email": "eloram2v@t-online.de",
-      "gender": "Male",
-      "country": "Nepal",
-      "job_title": "Technical Writer",
-      "company": "Fadeo",
-      "locations": [
-        {
-          "city": "Bjästa"
-        },
-        {
-          "city": "Sainyabuli"
-        }
-      ],
-      "profile_pic_url": "https://robohash.org/nostrumestet.jpg?size=50x50&set=set1"
-    },
-    {
       "id": 106,
       "first_name": "Thea",
       "last_name": "Kassidy",
