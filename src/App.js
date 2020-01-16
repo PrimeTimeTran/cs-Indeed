@@ -30,7 +30,7 @@ export default function App() {
         <Route path="/candidates/" component={CandidatesPage} exact />
         <Route path="/candidates/new" component={NewCandidatePage} />
         <Route
-          path="/candidates/:id/edit"
+          path="/candidates/:id"
           render={props => <CandidatePage {...props} />}
         />
       </Router>

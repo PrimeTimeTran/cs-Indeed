@@ -102,11 +102,11 @@ export default function CandidatesPage() {
                   </ListGroupItem>
                   <ListGroupItem>
                     <FontAwesomeIcon icon={faMapPin} />{" "}
-                    {candidate.locations && candidate.locations[0].city}
+                    {candidate.city}
                   </ListGroupItem>
                   <ListGroupItem>
                     <FontAwesomeIcon icon={faMap} />{" "}
-                    {candidate.locations && candidate.country}
+                    {candidate.country}
                   </ListGroupItem>
                   <ListGroupItem>
                     <FontAwesomeIcon icon={faEnvelope} /> {candidate.email}
@@ -116,7 +116,7 @@ export default function CandidatesPage() {
                   <Card.Link onClick={() => onDeleteCandidate(candidate.id)}>
                     <FontAwesomeIcon icon={faTrash} /> Remove
                   </Card.Link>
-                  <Card.Link href={`/candidates/${candidate.id}/edit`}>
+                  <Card.Link href={`/candidates/${candidate.id}`}>
                     <FontAwesomeIcon icon={faEdit} /> Edit
                   </Card.Link>
                 </Card.Body>
