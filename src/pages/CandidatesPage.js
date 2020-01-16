@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import {
   Row,
   Col,
@@ -28,9 +27,10 @@ const getImageUrl = candidate => {
   return `https://randomuser.me/api/portraits/${gender}/${num}.jpg`;
 };
 
-export default function CandidatesPage(props) {
+export default function CandidatesPage() {
   const [candidates, setCandidates] = useState([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const getCandidates = async () => {
       try {
@@ -39,8 +39,8 @@ export default function CandidatesPage(props) {
         setCandidates(data);
         setLoading(false);
       } catch (error) {
-        const bgCandidates = require('../candidates.json')
-        console.log('bgCandidates', bgCandidates.candidates)
+        const bgCandidates = require("../candidates.json");
+        console.log("bgCandidates", bgCandidates.candidates);
         setCandidates(bgCandidates.candidates);
         setLoading(false);
         console.log("Oops");
@@ -64,7 +64,7 @@ export default function CandidatesPage(props) {
     return (
       <Container
         fluid
-        style={{ paddingTop: 100, height: '100vh' }}
+        style={{ paddingTop: 100, height: "100vh" }}
         className="d-flex justify-content-center align-items-center"
       >
         <Row>
@@ -83,7 +83,7 @@ export default function CandidatesPage(props) {
           return (
             <Col lg="3" key={candidate.id}>
               <Card>
-                <Card.Img variant="top" src={candidate.profile_pic_url} />
+                <Card.Img variant="top" src={candidate.photo_url} />
                 <Card.Body>
                   <Card.Title>
                     {candidate.first_name + " " + candidate.last_name}

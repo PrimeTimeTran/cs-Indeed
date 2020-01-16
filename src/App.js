@@ -4,8 +4,6 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from 'react-redux'
 
-
-
 import TeamPage from "./pages/TeamPage";
 import Navbar from "./components/Navbar";
 import LoginPage from "./pages/LoginPage";
@@ -14,7 +12,7 @@ import PortfolioPage from "./pages/PortfolioPage";
 import DashboardPage from "./pages/DashboardPage";
 import CandidatesPage from "./pages/CandidatesPage";
 import NewCandidatePage from "./pages/NewCandidatePage";
-import EditCandidatePage from "./pages/EditCandidatePage";
+import CandidatePage from "./pages/CandidatePage";
 
 import store from './redux/store'
 
@@ -33,7 +31,7 @@ export default function App() {
         <Route path="/candidates/new" component={NewCandidatePage} />
         <Route
           path="/candidates/:id/edit"
-          render={props => <EditCandidatePage {...props} />}
+          render={props => <CandidatePage {...props} />}
         />
       </Router>
     </Provider>

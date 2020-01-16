@@ -9,6 +9,7 @@ export default function EditCandidatePage(props) {
   useEffect(() => {
     getCandidate();
   }, []);
+
   const getCandidate = async () => {
     try {
       const response = await fetch(
@@ -42,9 +43,10 @@ export default function EditCandidatePage(props) {
       );
       console.log("id", response);
     } catch (error) {
-      console.log('Oops');
+      console.log("Oops");
     }
   };
+
   const onSubmit = e => {
     const form = e.currentTarget;
     if (form.checkValidity() === false) {
@@ -55,15 +57,17 @@ export default function EditCandidatePage(props) {
     setValidated(true);
     updateCandidate();
   };
-  console.log("candidate", candidate);
+
   return (
     <Container style={{ paddingTop: 100 }}>
       <Helmet>
-          <title>Editing: {`${candidate.first_name} ${candidate.last_name}`}</title>
-        </Helmet>
+        <title>
+          Editing: {`${candidate.first_name} ${candidate.last_name}`}
+        </title>
+      </Helmet>
       <Row>
         <Col>
-          <img src={candidate.profile_pic_url} />
+          <img src={candidate.photo_url} />
           <Form noValidate validated={validated} onSubmit={onSubmit}>
             <Form.Row>
               <Form.Group as={Col} md="4" controlId="validationCustom01">
@@ -121,9 +125,7 @@ export default function EditCandidatePage(props) {
                   type="text"
                   placeholder="City"
                   required
-                  defaultValue={
-                    candidate.locations && candidate.locations[0].city
-                  }
+                  defaultValue={candidate.city}
                   onChange={e =>
                     setCandidate({ ...candidate, city: e.target.value })
                   }
@@ -153,11 +155,11 @@ export default function EditCandidatePage(props) {
                 <Form.Control
                   type="text"
                   required
-                  defaultValue={candidate.profile_pic_url}
+                  defaultValue={candidate.photo_url}
                   onChange={e =>
                     setCandidate({
                       ...candidate,
-                      profile_pic_url: e.target.value
+                      photo_url: e.target.value
                     })
                   }
                 />
@@ -173,9 +175,7 @@ export default function EditCandidatePage(props) {
                   type="text"
                   placeholder="CoderSchool"
                   required
-                  defaultValue={
-                    candidate.company
-                  }
+                  defaultValue={candidate.company}
                   onChange={e =>
                     setCandidate({ ...candidate, company: e.target.value })
                   }
@@ -200,7 +200,6 @@ export default function EditCandidatePage(props) {
                   Please provide a valid zip.
                 </Form.Control.Feedback>
               </Form.Group>
-              
             </Form.Row>
             <Form.Group>
               <Form.Check
