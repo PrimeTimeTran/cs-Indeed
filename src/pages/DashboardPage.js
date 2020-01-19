@@ -3,24 +3,22 @@ import { Helmet } from "react-helmet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-import { useSelector, useDispatch } from 'react-redux'
-
-
+import { useSelector, useDispatch } from "react-redux";
 
 import "../css/sb-admin.css";
 
 import { placeCopyright } from "../utils";
 
 export default function DashboardPage() {
-  const currentUser = useSelector((state) => state.email)
-  const dispatch = useDispatch()
+  const currentUser = useSelector(state => state.email);
+  const dispatch = useDispatch();
   return (
     <main role="main">
       <Helmet>
         <title>Dashboard</title>
       </Helmet>
       <nav className="navbar navbar-expand navbar-dark bg-dark static-top fixed-top">
-        <a className="navbar-brand mr-1" href="/">
+        <a className="navbar-brand mr-1" href="/company">
           Indeed
         </a>
 
@@ -49,17 +47,17 @@ export default function DashboardPage() {
             </div>
           </div>
         </form>
-        <button onClick={() => dispatch({ type: 'SIGN_OUT'})}>Sign Out</button>
+        <button onClick={() => dispatch({ type: "SIGN_OUT" })}>Sign Out</button>
         <ul className="navbar-nav ml-auto ml-md-0">
           <li className="nav-item dropdown no-arrow mx-1">
             <a
-              className="nav-link dropdown-toggle"
               href="#"
-              id="alertsDropdown"
               role="button"
+              id="alertsDropdown"
               data-toggle="dropdown"
               aria-haspopup="true"
               aria-expanded="false"
+              className="nav-link dropdown-toggle"
             >
               <i className="fas fa-bell fa-fw"></i>
               <span className="badge badge-danger">9+</span>
@@ -677,8 +675,6 @@ export default function DashboardPage() {
               </div>
             </div>
           </div>
-
-          
 
           <footer className="sticky-footer">
             <div className="container my-auto">

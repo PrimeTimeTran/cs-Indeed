@@ -1,15 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Row,
-  Col,
-  Card,
-  Spinner,
-  ListGroup,
-  Container,
-  ListGroupItem
-} from "react-bootstrap";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMap,
   faEdit,
@@ -20,6 +10,19 @@ import {
   faVenusMars,
   faBriefcase
 } from "@fortawesome/free-solid-svg-icons";
+
+import {
+  Row,
+  Col,
+  Card,
+  Spinner,
+  ListGroup,
+  Container,
+  ListGroupItem
+} from "react-bootstrap";
+
+import { Helmet } from "react-helmet";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const getImageUrl = candidate => {
   const gender = candidate.gender === "Male" ? "men" : "women";
@@ -78,6 +81,9 @@ export default function CandidatesPage() {
 
   return (
     <Container fluid style={{ paddingTop: 100 }}>
+      <Helmet>
+        <title>Candidates</title>
+      </Helmet>
       <Row>
         {candidates.map(candidate => {
           return (
@@ -101,12 +107,10 @@ export default function CandidatesPage() {
                     <FontAwesomeIcon icon={faVenusMars} /> {candidate.gender}
                   </ListGroupItem>
                   <ListGroupItem>
-                    <FontAwesomeIcon icon={faMapPin} />{" "}
-                    {candidate.city}
+                    <FontAwesomeIcon icon={faMapPin} /> {candidate.city}
                   </ListGroupItem>
                   <ListGroupItem>
-                    <FontAwesomeIcon icon={faMap} />{" "}
-                    {candidate.country}
+                    <FontAwesomeIcon icon={faMap} /> {candidate.country}
                   </ListGroupItem>
                   <ListGroupItem>
                     <FontAwesomeIcon icon={faEnvelope} /> {candidate.email}

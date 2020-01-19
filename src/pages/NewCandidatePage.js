@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 
-import CandidatePage from "./CandidatePage";
+import CandidateForm from "../components/CandidateForm";
 
 export default class NewCandidatePage extends Component {
   render() {
@@ -11,7 +11,7 @@ export default class NewCandidatePage extends Component {
           <title>New Candidate</title>
         </Helmet>
         <h1>New Candidate</h1>
-        <CandidatePage />
+        <CandidateForm />
       </div>
     );
   }
