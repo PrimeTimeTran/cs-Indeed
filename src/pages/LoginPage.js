@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 
-import { useHistory } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-
-
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import "../css/login.css";
 
 export default function LoginPage(props) {
   let history = useHistory();
-  const dispatch = useDispatch()
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const onSubmit = (e) => {
-    e.preventDefault()
-    history.push('/dashboard')
-    dispatch({ type: 'SIGN_IN', payload: { email, password}  })
-  }
+  const onSubmit = e => {
+    e.preventDefault();
+    history.push("/dashboard");
+    dispatch({ type: "SIGN_IN", payload: { email, password } });
+  };
 
   return (
     <div id="login" className="fluid-container" style={{ height: "100vh" }}>
@@ -33,7 +31,7 @@ export default function LoginPage(props) {
                     autoFocus
                     type="email"
                     className="form-control"
-                    onChange={(e)=> setEmail(e.target.value)}
+                    onChange={e => setEmail(e.target.value)}
                     placeholder="Email address"
                   />
                   <label>Email address</label>
@@ -45,7 +43,7 @@ export default function LoginPage(props) {
                     type="password"
                     className="form-control"
                     placeholder="Password"
-                    onChange={(e)=> setPassword(e.target.value)}
+                    onChange={e => setPassword(e.target.value)}
                   />
                   <label for="inputPassword">Password</label>
                 </div>
@@ -77,7 +75,8 @@ export default function LoginPage(props) {
                   type="submit"
                   className="btn btn-lg btn-facebook btn-block text-uppercase"
                 >
-                  <i className="fab fa-facebook-f mr-2"></i> Sign in with Facebook
+                  <i className="fab fa-facebook-f mr-2"></i> Sign in with
+                  Facebook
                 </button>
               </form>
             </div>

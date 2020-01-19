@@ -27,9 +27,10 @@ export default function App() {
         <Route path="/team" component={TeamPage} />
         <Route path="/portfolio" component={PortfolioPage} />
         <Route path="/login" component={LoginPage} exact />
-        <Route path="/candidates/" component={CandidatesPage} exact />
-        <Route path="/candidates/new" component={NewCandidatePage} />
+        <Route path="/candidates" exact component={CandidatesPage}  />
+        <Route path="/newcandidate" exact component={NewCandidatePage} />
         <Route
+          exact
           path="/candidates/:id"
           render={props => <CandidatePage {...props} />}
         />

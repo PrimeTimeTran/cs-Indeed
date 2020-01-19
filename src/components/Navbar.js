@@ -20,7 +20,7 @@ export default function Navbarr() {
           <Link to="/candidates" className="nav-link">
             Candidates
           </Link>
-          <Link to="/candidates/new" className="nav-link">
+          <Link to="/newcandidate" className="nav-link">
             New Candidate
           </Link>
         </Nav>
