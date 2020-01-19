@@ -24,12 +24,6 @@ import {
 import { Helmet } from "react-helmet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const getImageUrl = candidate => {
-  const gender = candidate.gender === "Male" ? "men" : "women";
-  const num = (Math.random() * 75).toFixed();
-  return `https://randomuser.me/api/portraits/${gender}/${num}.jpg`;
-};
-
 export default function CandidatesPage() {
   const [candidates, setCandidates] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -43,10 +37,8 @@ export default function CandidatesPage() {
         setLoading(false);
       } catch (error) {
         const bgCandidates = require("../candidates.json");
-        console.log("bgCandidates", bgCandidates.candidates);
         setCandidates(bgCandidates.candidates);
         setLoading(false);
-        console.log("Oops");
       }
     };
     getCandidates();

@@ -5,6 +5,8 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { useSelector, useDispatch } from "react-redux";
 
+import { Link } from "react-router-dom";
+
 import "../css/sb-admin.css";
 
 import { placeCopyright } from "../utils";
@@ -18,10 +20,9 @@ export default function DashboardPage() {
         <title>Dashboard</title>
       </Helmet>
       <nav className="navbar navbar-expand navbar-dark bg-dark static-top fixed-top">
-        <a className="navbar-brand mr-1" href="/company">
+        <Link to="/" className="nav-link">
           Indeed
-        </a>
-
+        </Link>
         <button
           className="btn btn-link btn-sm text-white order-1 order-sm-0"
           id="sidebarToggle"
@@ -34,11 +35,11 @@ export default function DashboardPage() {
           <div className="input-group">
             <input
               type="text"
+              aria-label="Search"
               className="form-control"
               placeholder={currentUser}
-              aria-label="Search"
               aria-describedby="basic-addon2"
-            />
+              />
             >
             <div className="input-group-append">
               <button className="btn btn-primary" type="button">

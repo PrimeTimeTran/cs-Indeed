@@ -23,6 +23,7 @@ export default function CandidateForm(props) {
   }, [props]);
 
   const updateCandidate = async () => {
+    console.log('updateCandidate');
     const config = {
       mode: "cors",
       method: "PUT",
@@ -35,21 +36,21 @@ export default function CandidateForm(props) {
         "Content-Type": "application/json"
       }
     };
-    try {
+    // try {
       const response = await fetch(
-        `http://localhost:3001/candidates/${props.match.params.id}`,
+        `http://localhost:3001/candidates/${props.candidate.id}`,
         config
       );
       console.log("id", response);
-    } catch (error) {
-      console.log("Oops");
-    }
+    // } catch (error) {
+    //   console.log("Oops");
+    // }
   };
 
   const onSubmit = e => {
     const form = e.currentTarget;
+    e.preventDefault();
     if (form.checkValidity() === false) {
-      e.preventDefault();
       e.stopPropagation();
     }
 

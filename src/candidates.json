@@ -49,6 +49,18 @@
       "photo_url": "https://bit.ly/3agwwXW"
     },
     {
+      "id": 18,
+      "first_name": "Eloisa",
+      "last_name": "Pillans",
+      "email": "epillansh@dailymotion.com",
+      "gender": "Female",
+      "company": "Jayo",
+      "job_title": "Payment Adjustment Coordinator",
+      "city": "Barusuda",
+      "country": "Indonesia",
+      "photo_url": "https://robohash.org/laboriosamaliquidcupiditate.png?size=500x500&set=set1"
+    },
+    {
       "id": 19,
       "first_name": "Celina",
       "last_name": "Nosworthy",
@@ -2048,7 +2060,7 @@
       "gender": "Male",
       "company": "Twitterbridge",
       "job_title": "Senior Financial Analyst",
-      "city": "Montilla",
+      " ": "Montilla",
       "country": "Philippines",
       "photo_url": "https://robohash.org/sitrerumquia.png?size=500x500&set=set1"
     },

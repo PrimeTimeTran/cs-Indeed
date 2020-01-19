@@ -13,7 +13,7 @@ export default function LoginPage(props) {
 
   const onSubmit = e => {
     e.preventDefault();
-    history.push("/dashboard");
+    history.push("/candidates");
     dispatch({ type: "SIGN_IN", payload: { email, password } });
   };
 
