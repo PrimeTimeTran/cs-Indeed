@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import { Link } from "react-router-dom";
@@ -14,12 +13,10 @@ import "../css/sb-admin.css";
 import { placeCopyright } from "../utils";
 
 export default function DashboardPage() {
-  const currentUser = useSelector(state => state.email);
-  const dispatch = useDispatch();
-  let history = useHistory();
+  const history = useHistory();
+  const currentUser = null
 
   const signOut = () => {
-    dispatch({ type: "SIGN_OUT" });
     history.push("/");
   };
 
@@ -57,7 +54,7 @@ export default function DashboardPage() {
             </div>
           </div>
         </form>
-        <button onClick={signOut}>Sign Out</button>
+        {currentUser && <button onClick={signOut}>Sign sssOut</button>}
         <ul className="navbar-nav ml-auto ml-md-0">
           <li className="nav-item dropdown no-arrow mx-1">
             <a

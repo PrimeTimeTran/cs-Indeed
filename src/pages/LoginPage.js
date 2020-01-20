@@ -1,25 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 
 import "../css/login.css";
 
 export default function LoginPage() {
   let history = useHistory();
-  const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const user = useSelector(state => state.email);
-
-  useEffect(() => {
-    if (user) history.push("/candidates");
-  }, []);
 
   const onSubmit = e => {
     e.preventDefault();
     history.push("/candidates");
-    dispatch({ type: "SIGN_IN", payload: { email, password } });
   };
 
   return (
