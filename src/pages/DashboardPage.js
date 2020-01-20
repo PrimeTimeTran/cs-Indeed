@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Helmet } from "react-helmet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -39,7 +40,7 @@ export default function DashboardPage() {
               className="form-control"
               placeholder={currentUser}
               aria-describedby="basic-addon2"
-              />
+            />
             >
             <div className="input-group-append">
               <button className="btn btn-primary" type="button">

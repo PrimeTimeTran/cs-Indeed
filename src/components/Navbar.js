@@ -4,7 +4,7 @@ import { Nav, Form, Button, Navbar, FormControl } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
-export default function Navbarr() {
+export default function NavigationBar() {
   return (
     <Navbar fixed="top" bg="light" expand="lg">
       <Navbar.Brand href="/">Indeed</Navbar.Brand>

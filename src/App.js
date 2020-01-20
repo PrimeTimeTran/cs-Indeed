@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Provider } from 'react-redux'
+import { Provider } from "react-redux";
 
 import TeamPage from "./pages/TeamPage";
 import Navbar from "./components/Navbar";
@@ -14,7 +14,7 @@ import CandidatesPage from "./pages/CandidatesPage";
 import NewCandidatePage from "./pages/NewCandidatePage";
 import CandidatePage from "./pages/CandidatePage";
 
-import store from './redux/store'
+import store from "./redux/store";
 
 export default function App() {
   return (
@@ -27,7 +27,7 @@ export default function App() {
         <Route path="/team" component={TeamPage} />
         <Route path="/portfolio" component={PortfolioPage} />
         <Route path="/login" component={LoginPage} exact />
-        <Route path="/candidates" exact component={CandidatesPage}  />
+        <Route path="/candidates" exact component={CandidatesPage} />
         <Route path="/newcandidate" exact component={NewCandidatePage} />
         <Route
           exact
