@@ -11,7 +11,7 @@ export default function LoginPage() {
 
   const onSubmit = e => {
     e.preventDefault();
-    history.push("/candidates");
+    history.push("/dashboard");
   };
 
   return (
