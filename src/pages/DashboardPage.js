@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+
 
 import { Link } from "react-router-dom";
 
@@ -15,6 +17,14 @@ import { placeCopyright } from "../utils";
 export default function DashboardPage() {
   const currentUser = useSelector(state => state.email);
   const dispatch = useDispatch();
+  let history = useHistory();
+
+
+  const signOut = () => {
+    dispatch({ type: "SIGN_OUT" })
+    history.push('/')
+
+  }
   return (
     <main role="main">
       <Helmet>
@@ -49,7 +59,7 @@ export default function DashboardPage() {
             </div>
           </div>
         </form>
-        <button onClick={() => dispatch({ type: "SIGN_OUT" })}>Sign Out</button>
+        <button onClick={signOut}>Sign Out</button>
         <ul className="navbar-nav ml-auto ml-md-0">
           <li className="nav-item dropdown no-arrow mx-1">
             <a
@@ -133,8 +143,8 @@ export default function DashboardPage() {
               </a>
               <div className="dropdown-divider"></div>
               <a
-                className="dropdown-item"
                 href="#"
+                className="dropdown-item"
                 data-toggle="modal"
                 data-target="#logoutModal"
               >

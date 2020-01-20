@@ -7,7 +7,11 @@ import { Link } from "react-router-dom";
 export default function NavigationBar() {
   return (
     <Navbar fixed="top" bg="light" expand="lg">
-      <Navbar.Brand href="/">Indeed</Navbar.Brand>
+      <Navbar.Brand>
+        <Link to="/" className="nav-link">
+          Indeed
+        </Link>
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
