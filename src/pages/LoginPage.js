@@ -11,13 +11,10 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const user = useSelector(state => state.email);
-  console.log({ user });
 
   useEffect(() => {
-    if (user) {
-      history.push('/candidates')
-    }
-  }, [])
+    if (user) history.push("/candidates");
+  }, []);
 
   const onSubmit = e => {
     e.preventDefault();

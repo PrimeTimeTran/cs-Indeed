@@ -23,7 +23,6 @@ export default function CandidateForm(props) {
   }, [props]);
 
   const updateCandidate = async () => {
-    console.log('updateCandidate');
     const config = {
       mode: "cors",
       method: "PUT",
@@ -36,15 +35,14 @@ export default function CandidateForm(props) {
         "Content-Type": "application/json"
       }
     };
-    // try {
-      const response = await fetch(
+    try {
+      await fetch(
         `http://localhost:3001/candidates/${props.candidate.id}`,
         config
       );
-      console.log("id", response);
-    // } catch (error) {
-    //   console.log("Oops");
-    // }
+    } catch (error) {
+      console.log("Oops");
+    }
   };
 
   const onSubmit = e => {
@@ -62,7 +60,7 @@ export default function CandidateForm(props) {
     <Container style={{ paddingTop: 100 }}>
       <Row>
         <Col>
-          <img src={candidate.photo_url} />
+          <img alt={candidate.first_name} src={candidate.photo_url} />
           <Form noValidate validated={validated} onSubmit={onSubmit}>
             <Form.Row>
               <Form.Group as={Col} md="4" controlId="validationCustom01">
