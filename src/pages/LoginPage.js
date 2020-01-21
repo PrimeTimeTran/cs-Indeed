@@ -13,12 +13,12 @@ export default function LoginPage() {
   const user = useSelector(state => state.email);
 
   useEffect(() => {
-    if (user) history.push("/candidates");
+    if (user) history.push("/dashboard");
   }, []);
 
   const onSubmit = e => {
     e.preventDefault();
-    history.push("/candidates");
+    history.push("/dashboard");
     dispatch({ type: "SIGN_IN", payload: { email, password } });
   };
 
