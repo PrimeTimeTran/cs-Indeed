@@ -13,7 +13,7 @@ export default function LoginPage() {
   const user = useSelector(state => state.email);
 
   useEffect(() => {
-    if (user) history.push("/dashboard");
+    if (user) history.push("/candidates");
   }, []);
 
   const onSubmit = e => {
