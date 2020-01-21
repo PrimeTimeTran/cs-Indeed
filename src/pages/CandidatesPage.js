@@ -22,6 +22,8 @@ import {
 } from "react-bootstrap";
 
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function CandidatesPage() {
@@ -112,9 +114,9 @@ export default function CandidatesPage() {
                   <Card.Link onClick={() => onDeleteCandidate(candidate.id)}>
                     <FontAwesomeIcon icon={faTrash} /> Remove
                   </Card.Link>
-                  <Card.Link href={`/candidates/${candidate.id}`}>
+                  <Link to={`/candidates/${candidate.id}`} className="nav-link">
                     <FontAwesomeIcon icon={faEdit} /> Edit
-                  </Card.Link>
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>
