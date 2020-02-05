@@ -35,14 +35,12 @@ export default function CandidateForm(props) {
         "Content-Type": "application/json"
       }
     };
-    try {
+      console.log('props', props)
       await fetch(
         `http://localhost:3001/candidates/${props.candidate.id}`,
         config
       );
-    } catch (error) {
-      console.log("Oops");
-    }
+
   };
 
   const onSubmit = e => {
