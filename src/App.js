@@ -1,7 +1,10 @@
 import React from "react";
-// Hello World, I commented
+
 // A change on line 3
+// this is bitna's comment but its after loi 
+// bitna's second comment on master 
 import "./App.css";
+
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
