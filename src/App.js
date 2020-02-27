@@ -1,6 +1,9 @@
 import React from "react";
-// Hello World, I commented
+
+// this is bitna's comment but its after loi 
+
 import "./App.css";
+
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
