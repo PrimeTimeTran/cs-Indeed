@@ -1,5 +1,7 @@
 import React from "react";
+// this is bitna's comment but its after loi 
 import "./App.css";
+
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
